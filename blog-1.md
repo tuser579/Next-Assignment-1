@@ -19,6 +19,7 @@ let something: any = "hello";
 something.toFixed(2);     //  error: "hello".toFixed is not a function
 something.missing.name;   //  error: Cannot read property 'name'
 something();              //  error: "hello" is not a function
+```
 
 ## Why unknown Is Safer
 unknown works differently. It says: "I have no idea what this is. You must check before using it."
@@ -26,7 +27,7 @@ unknown works differently. It says: "I have no idea what this is. You must check
 ```typescript
 let userData: unknown = JSON.parse(localStorage.getItem("user") || "{}");
 console.log(userData.name);  // Error: Object is of type 'unknown'
-
+```
 ## How to Use unknown Safely
 ```typescript
 function handleValue(value: unknown) {
@@ -38,6 +39,7 @@ function handleValue(value: unknown) {
         console.log("I don't know this type");
     }
 }
+```
 
 ## Conclution
 Think of any as a rusty old car with no brakes. It might move, but it's dangerous.
